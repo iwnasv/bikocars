@@ -1,3 +1,5 @@
 public/asset/carimg/*
 db/kikocars.db
 src/PHPMailer-master
+public/asset/date.js
+src/emailconf.php
