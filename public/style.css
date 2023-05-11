@@ -1,0 +1,241 @@
+:root {
+    --white: #f9f9f9;
+    --dark: #0b131e;
+    --extra: #ffa400;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=PT+Sans&family=PT+Serif&display=swap');
+/*
+font-family: 'Lobster Two', cursive;
+font-family: 'PT Sans', sans-serif;
+font-family: 'PT Serif', serif;
+*/
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: var(--dark);
+  color: var(--white);
+}
+a:hover {
+  transition: color .2s;
+  color: var(--extra);
+}
+@keyframes bgSlideshow {
+  0% {
+    background-image: url(/asset/bg/3.jpg);
+  }
+  33% {
+    background-image: url(/asset/bg/1.jpg);
+  }
+  66% {
+    background-image: url(/asset/bg/2.jpg);
+  }
+  100% {
+    background-image: url(/asset/bg/3.jpg);
+  }
+}
+main#index {
+  animation: bgSlideshow 15s linear infinite;
+  background-position-x: 50%;
+  background-size: cover;
+}
+main {
+  color: var(--dark);
+  background-color: var(--white);
+  min-height: 80%;
+  padding: 3em .5em;
+}
+article {
+  background-color: #f9f9f980;
+  backdrop-filter: blur(10px);
+}
+#flags li {
+    margin: 3px;
+}
+@keyframes glow {
+  from {
+    color: var(--white)
+  }
+  to {
+    color: var(--extra)
+  }
+}
+#tel {
+  animation: glow 3s ease-in-out alternate infinite;
+  font-size: 110%;
+  text-align: right;
+  font-weight: 600;
+}
+#create-reservation {
+  width: 100%;
+  display: block;
+}
+#lang {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+}
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--dark);
+  z-index: 10;
+}
+#header-links{
+  font-weight: 600;
+}
+#header-links button {
+  font-size: 1.5em;
+  text-align: right;
+  width: 100%;
+  padding-right: 1em;
+  background-color: var(--extra);
+  border: unset;
+  border-radius: unset;
+}
+#expandLinks {
+  display: none;
+  visibility: collapse;
+  transition: all 1s; /*den kanei kati to magiko. prin kairo to eixa vrei to kolpo prepei na to ksanapiasw*/
+}
+#expandLinks li {
+  border-bottom: 2px solid var(--extra);
+}
+#promocode {
+  position: absolute;
+  bottom: 2.3em;
+  right: 2px;
+}
+.transparentbox {
+  background-color: unset;
+  border: none;
+  color: var(--dark);
+}
+input[type=submit], button, .button {
+  border-radius: 7px 10px;
+  border: 3px solid #98afc7;
+  border-top-width: 1px;
+  border-left: none;
+  background-color: var(--white);
+  text-align: center;
+  padding: .3em .5em;
+}
+.centertext {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+#res-time-place {
+  min-height: 5em;
+  margin-top: 1em;
+}
+.car-div {
+  display: flex;
+  border: 3px solid blanchedalmond;
+  box-shadow: 3px 3px 3px lightslategray;
+  border-radius: 10px;
+  margin-block: 1em;
+}
+.car-facts {
+  width: 15em;
+  margin: 1em auto;
+  margin-right: 1em;
+  text-align: right;
+}
+.price {
+  font-size: 115%;
+  font-weight: bold;
+}
+.car-img {
+  margin: auto 1em;
+  max-width: 10em;
+}
+.cancel {
+  text-decoration: line-through;
+}
+input[type=number] {
+  width: 4em;
+}
+.title {
+  width: 100%;
+  text-align: center;
+}
+#reservation-details ul {
+  width: 90%;
+  margin: auto;
+}
+#reservation-details li {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+#reservation-details input[type=text],textarea {
+  width: 100%;
+}
+#reservation-confirmation {
+  background-color: lightgoldenrodyellow;
+  font-family: 'PT Serif', serif;
+  text-decoration: black dotted underline;
+}
+.pc {
+  display: none;
+}
+#gmaps {
+  visibility: hidden;
+  display: none;
+}
+#social-media img {
+  max-width: 50px;
+}
+hr.phone {
+  width: 1em;
+  height: 3px;
+  margin: auto;
+  background-color: var(--extra);
+}
+@media only screen and (min-width: 768px) {
+  main article {
+    max-width: 33%;
+    margin: auto;
+  }
+  #header-links {
+    display: none;
+  }
+  .pc {
+    display: unset;
+  }
+  hr.pc {
+    height: 3px;
+    background-color: var(--extra);
+  }
+  hr.phone {
+    display: none;
+  }
+  #fleet-table {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .car-div {
+    margin-left: 1em;
+  }
+  #extras-list {
+    max-width: 50%;
+    margin: auto;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  #pcLinks {
+    display: flex;
+    bottom: 0;
+    height: 2em;
+    position: absolute;
+  }
+  #pcLinks li {
+    margin: 0 1em;
+    font-size: 120%;
+  }
+}
