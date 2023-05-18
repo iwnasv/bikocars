@@ -26,10 +26,42 @@ a:hover {
   0% {
     background-image: url(/asset/bg/3.jpg);
   }
+  30% {
+    background-image: url(/asset/bg/3.jpg);
+  }
   33% {
     background-image: url(/asset/bg/1.jpg);
   }
+  63% {
+    background-image: url(/asset/bg/1.jpg);
+  }
   66% {
+    background-image: url(/asset/bg/2.jpg);
+  }
+  97% {
+    background-image: url(/asset/bg/2.jpg);
+  }
+  100% {
+    background-image: url(/asset/bg/3.jpg);
+  }
+}/*auto to xak to exw gia ta iphone. epishs, auto me ta steps to exw gt ta kinhta kanoun automata fade sto transition...*/
+@-webkit-keyframes bgSlideShow {
+  0% {
+    background-image: url(/asset/bg/3.jpg);
+  }
+  30% {
+    background-image: url(/asset/bg/3.jpg);
+  }
+  33% {
+    background-image: url(/asset/bg/1.jpg);
+  }
+  63% {
+    background-image: url(/asset/bg/1.jpg);
+  }
+  66% {
+    background-image: url(/asset/bg/2.jpg);
+  }
+  97% {
     background-image: url(/asset/bg/2.jpg);
   }
   100% {
@@ -37,7 +69,7 @@ a:hover {
   }
 }
 main#index {
-  animation: bgSlideshow 15s linear infinite;
+  animation: bgSlideshow 30s linear infinite;
   background-position-x: 50%;
   background-size: cover;
 }
@@ -46,6 +78,10 @@ main {
   background-color: var(--white);
   min-height: 80%;
   padding: 3em .5em;
+}
+#res-time-place input[type=date] {
+  max-width: 90%;
+  overflow-x: hidden;
 }
 article {
   background-color: #f9f9f980;
@@ -104,9 +140,10 @@ header {
   border-bottom: 2px solid var(--extra);
 }
 #promocode {
-  position: absolute;
-  bottom: 2.3em;
-  right: 2px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+  background-color: transparent;
 }
 .transparentbox {
   background-color: unset;

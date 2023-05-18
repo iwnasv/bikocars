@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <input name="promo" class="transparentbox" id="promocode" type="text" placeholder="Promo code"/>
+                    <input name="promo" id="promocode" type="text" placeholder="Promo code"/>
                     <input type="submit" class="w-full" value="Book Now!"/>
                 </div>
             </form>
