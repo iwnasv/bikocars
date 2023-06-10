@@ -50,7 +50,7 @@ INSERT INTO cars(name, img) VALUES('HYUNDAI I10','i10.png');
 INSERT INTO cars(name, img, category, baggage) VALUES('SKODA FABIA','skoda-fabia.png',1,2);
 INSERT INTO cars(name, img, category, baggage) VALUES('HYUNDAI I20','i20.png',1,2);
 INSERT INTO cars(name, img, category, baggage) VALUES('NISSAN MICRA','micra.png',1,2);
-INSERT INTO cars(name, img, category, baggage, automatic) VALUES('NISSAN MICRA','micra-auto.png',1,2,1);
+INSERT INTO cars(name, img, category, baggage, automatic) VALUES('NISSAN MICRA','micra.png',1,2,1);
 INSERT INTO cars(name, img, category, baggage) VALUES('RENAULT CLIO','clio.png',1,2);
 INSERT INTO cars(name, img, category, baggage) VALUES('CITROEN C1 CABRIO','c1.png',1,3);
 INSERT INTO cars(name, img, category, baggage, fuel) VALUES('CITROEN C4','c4.png',2,3,1);
@@ -60,6 +60,6 @@ INSERT INTO cars(name, img, category, baggage) VALUES('TOYOTOTA COROLLA','corola
 INSERT INTO cars(name, img, category, baggage, fuel) VALUES('DACIA SANDERO','sandero.png',3,4,1);
 INSERT INTO cars(name, img, category, baggage, passengers, fuel) VALUES('NISSAN EVALIA','evalia.png',4,5,8,1);
 INSERT INTO cars(name, img, category, baggage, fuel) VALUES('MERCEDES VIANO','viano.png',6,5,1);
-INSERT INTO cars(name, img, category, baggage, fuel, automatic, extras, lock) VALUES('MERCEDES E-CLASS', 'eclass.png', 5, 4, 1, 1, 'diesel-hybrid, clima', 1);
-INSERT INTO cars(name, img, category, baggage, fuel, automatic, extras, lock) VALUES('RANGE ROVER', 'rangerover.png', 5, 4, 1, 1, 'clima', 1);
+INSERT INTO cars(name, img, category, baggage, fuel, automatic, extras, lock) VALUES('MERCEDES E-CLASS', 'eclass.png', 5, 4, 1, 1, 'diesel-hybrid', 1);
+INSERT INTO cars(name, img, category, baggage, fuel, automatic, lock) VALUES('RANGE ROVER', 'rangerover.png', 5, 4, 1, 1, 1); /*clima: when it's a luxury car, change if inappropriate*/
 COMMIT;
