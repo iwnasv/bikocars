@@ -7,7 +7,7 @@ $groups = [
     "van",
     "luxury",
     "luxury van"
-]; /* vlepe: db/kikocars.sql */
+];
 ?><div class="car-div">
     <div class="car-img">
         <img src="/asset/carimg/<?= $car['img'] ?>"<?php if(!$available) : ?> class="grayscale opacity-50<?php endif ?>" ?>
@@ -29,7 +29,7 @@ $groups = [
         </ul>
         <?php $fleetvars = '?car=' . $car['id']; ?>
         <?php if($available): ?>
-        <a class="button" href="/book/<?= $nextpage ?>.php<?= $fleetvars ?>">Book now</a>
+        <a class="button" href="/book/<?= $nextpage ?>.php<?= $fleetvars ?>"><?= $bookLinkText?></a>
         <?php else: ?>
         <span class="italic">Not available</span>
         <?php endif ?>

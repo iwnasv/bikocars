@@ -15,6 +15,7 @@
                 foreach($carsArray as $car) {
                     //αν έχω ημερομηνίες, δες το αμάξι να είναι διαθέσιμο τότε, αλλιώς μην το δείξεις
                     $available = !$car['lock'];
+                    $bookLinkText = "Proceed"; //αν δεν έχω ημερομηνίες, πες αυτό και πάρε ημερομηνίες. αλλιώς πες Book
                     if(!(empty($_SESSION['datestart']) || empty($_SESSION['dateend']))) {
                         $nextpage = "extras";
                         $dateA = "date('" . date("Y-m-d", $_SESSION['datestart']) . "')";
@@ -27,6 +28,7 @@
                         if($unavailability):
                             $available = false; //na kanw kapws na leei apo pote einai dia8esimo, me link pou me get dinei dia8esimh hmeromhnia
                         endif;
+                        $bookLinkText = "Book";
                     }
                     include('../src/car-div.php');
                 } ?>
