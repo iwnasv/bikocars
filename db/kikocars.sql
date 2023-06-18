@@ -4,7 +4,7 @@ CREATE TABLE cars(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name nchar not null,
     category int default 0,
-    img nchar not null,
+    img nchar default 'default.png',
     passengers int default 5,
     baggage int default 1,
     automatic binary default 0,
