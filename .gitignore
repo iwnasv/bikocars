@@ -5,3 +5,7 @@ db/kikocars.db*
 src/PHPMailer-master
 public/asset/date.js
 src/emailconf.php
+
+# please don't post on github
+about/legal.php
+about/index.php
