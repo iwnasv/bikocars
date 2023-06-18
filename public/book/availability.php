@@ -1,5 +1,4 @@
 <?php include '../../src/head.php';
-require_once '../../src/db.php';
 include '../src/getdates.php'; ?>
 <body>
     <header>

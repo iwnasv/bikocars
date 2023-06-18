@@ -15,4 +15,14 @@
         <input name="promo" id="promocode" type="text" placeholder="Promo code"/>
         <input type="submit" class="w-full" value="Book Now!"/>
     </div>
+    <script>
+        // auto kanei koumanto sthn hmeromhnia epistrofhs
+        function calcReturn(start) {
+            let date = new Date.parse(start);
+            date = date.add(3).day();
+            document.getElementById('return-date').value = date.toString('yyyy-MM-dd');
+            document.getElementById('return-date').min = date.toString('yyyy-MM-dd');
+        }
+        window.onLoad = calcReturn(Date.today());
+    </script>
 </form>
