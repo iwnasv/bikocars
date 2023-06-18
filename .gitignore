@@ -1,4 +1,7 @@
-db/kikocars.db
+# testing databases
+db/kikocars.db*
+
+# borrowed
 src/PHPMailer-master
 public/asset/date.js
 src/emailconf.php

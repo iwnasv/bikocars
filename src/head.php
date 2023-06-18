@@ -11,6 +11,7 @@
 <!--<base href="https://kikocars.gr"-->
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" type="text/css" href="/style.css">
+<link rel="icon" type="image/png" href="/favicon.png" />
 <title><?php if(empty($title)) { echo "Kiko Cars Car & Van Rental"; } else { echo $title . ' - Kiko Cars Car & Van Rental'; } ?></title>
 <script type="text/javascript" src="/asset/date.js"></script>
 </head>
