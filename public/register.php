@@ -25,7 +25,8 @@ $statement->bindValue('flight', $_SESSION['reservation']['flight'], SQLITE3_TEXT
 $statement->bindValue('notes', $_SESSION['reservation']['notes'], SQLITE3_TEXT);
 $statement->bindValue('promo', $_SESSION['reservation']['promo'], SQLITE3_TEXT);
 $a = $statement->execute();
-$msg = "Dear " . $_SESSION['reservation']['name'] . " " . $_SESSION['reservation']['lastname'] . file_get_contents('../src/email-reservation-processed.txt');
+$name = $_SESSION['reservation']['name'] . ' ' . $_SESSION['reservation']['lastname'];
+$msg = "Dear " . $name . file_get_contents('../src/email-reservation-processed.txt');
 $msg = $msg . "\nhttps://kikocars.gr/book/details.php?code=" . $code;
 
 require('../src/emailconf.php');
@@ -34,7 +35,8 @@ $mail->Subject = 'Your reservation at Kiko Cars!';
 $mail->Body = $msg;
 $mail->Send();
 $mail->smtpClose();
+
 session_unset();
-session_destroy();
+session_destroy();// create another session here, and use a time variable to prevent him from sending another email...
 header('Location: /book/details.php?code=' . $code); 
 ;?>
