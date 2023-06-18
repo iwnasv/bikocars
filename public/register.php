@@ -36,6 +36,10 @@ $mail->Body = $msg;
 $mail->Send();
 $mail->smtpClose();
 
+// THE FOLLOWING IS FOR THE NOTIFICATION!!
+$bossmail->Send();
+$bossmail->smtpClose();
+
 session_unset();
 session_destroy();// create another session here, and use a time variable to prevent him from sending another email...
 header('Location: /book/details.php?code=' . $code); 
