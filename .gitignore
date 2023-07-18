@@ -3,5 +3,6 @@ db/kikocars.db*
 
 # borrowed
 src/PHPMailer-master
-public/asset/date.js
+#public/asset/date.js
 src/emailconf.php
+*debug.yml
