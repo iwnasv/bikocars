@@ -1,0 +1,49 @@
+---
+- hosts: almalinux9
+  become: yes
+  tasks:
+    - name: Install required packages
+      yum:
+        name: ['git', 'certbot', 'nano', 'bash-completion', 'epel-release', 'yum-utils', 'device-mapper-persistent-data', 'lvm2']
+        state: latest
+
+    - name: Add Docker repo
+      command: 
+        cmd: yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+
+    - name: Install Docker
+      yum:
+        name: ['docker-ce', 'docker-ce-cli', 'containerd.io']
+        state: latest
+
+    - name: Start and enable Docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Install Docker Compose
+      yum:
+        name: docker-compose
+        state: latest
+
+    - name: Create swapfile
+      command: fallocate -l 1G /swapfile
+
+    - name: Set correct permissions for swapfile
+      file:
+        path: /swapfile
+        mode: '0600'
+
+    - name: Setup swap space
+      command: mkswap /swapfile
+
+    - name: Enable swap space
+      command: swapon /swapfile
+
+    - name: Add swapfile to fstab
+      lineinfile:
+        path: /etc/fstab
+        line: '/swapfile swap swap defaults 0 0'
+        state: present
+...

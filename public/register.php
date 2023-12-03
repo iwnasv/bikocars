@@ -37,6 +37,11 @@ $mail->Send();
 $mail->smtpClose();
 
 // THE FOLLOWING IS FOR THE NOTIFICATION!!
+$bossmail = clone $mail;
+$bossmail->clearAllRecipients();
+$bossmail->addAddress('nikos.gkaraklov@gmail.com', 'Nikos Gkaraklov');
+$bossmail->Subject = 'Confirm a new reservation';
+$bossmail->Body = 'https://boss.kikocars.gr/?reservation=' . $code . '\nΔεν θα δουλέψει, τεστάρω';
 $bossmail->Send();
 $bossmail->smtpClose();
 
