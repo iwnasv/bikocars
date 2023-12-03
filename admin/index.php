@@ -14,6 +14,6 @@ if(true) {//edw 8a empaine to $_SESSION['loggedin'] alla protimw na exw http bas
 ?>
 <footer>
     <hr>
-    <h3>Copyright @iwnaras 2023-<?=date('Y')?>, all rights reserved.</h3>
+    <h3>Copyright Ionas 2023-<?=date('Y')?>, all rights reserved.</h3>
 </footer>
 </html>
