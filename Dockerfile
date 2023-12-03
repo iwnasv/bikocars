@@ -23,7 +23,7 @@ RUN chown -R www-data:www-data /var/www/html
 ENV PASSWORD=password
 
 # Create the password file using the environment variable
-RUN printf "nikos:$(openssl passwd -apr1 $PASSWORD)\n" | > /opt/kiko-password
+RUN printf "nikos:$(openssl passwd -apr1 $PASSWORD)\n" > /opt/kiko-password
 
 # Start PHP-FPM and Nginx services
 CMD ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]
