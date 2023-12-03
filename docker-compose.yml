@@ -1,8 +1,15 @@
-version: '3.4'
-
+version: '3.8'
 services:
-  bikocars:
-    image: bikocars
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+  kikocars:
+    container_name: kikocars
+    image: kikocars:0.9
+    restart: always
+    environment:
+      - PASSWORD=test
+    volumes:
+      - /etc/letsencrypt/live/kikocars.gr/fullchain.pem:/opt/certs/site.crt
+      - /etc/letsencrypt/live/kikocars.gr/privkey.pem:/opt/certs/priv.key
+      - /root/kikocars.db:/var/www/html/db/kikocars.db
+    ports:
+      - 80:80
+      - 443:443
