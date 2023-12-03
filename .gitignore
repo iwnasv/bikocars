@@ -4,5 +4,5 @@ db/kikocars.db*
 # borrowed
 # src/PHPMailer-master
 #public/asset/date.js
-src/emailconf.php
+cfg/emailconf.php
 *debug.yml
