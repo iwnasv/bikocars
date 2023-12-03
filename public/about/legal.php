@@ -1,8 +1,8 @@
-<?php include '../src/head.php'; ?>
-<?php require_once '../src/db.php'; ?>
+<?php include '../../src/head.php'; ?>
+<?php require_once '../../src/db.php'; ?>
 <body>
     <header>
-        <?php include '../src/header.php'; ?>
+        <?php include '../../src/header.php'; ?>
     </header>
     <main>
         <p class="font-bold">Welcome to KIKOCARS!</p>
@@ -16,7 +16,7 @@
         <p>Follow us on FB & IG.</p>
     </main>
     <footer>
-        <?php include '../src/footer.php'; ?>
+        <?php include '../../src/footer.php'; ?>
     </footer>
 </body>
 </html>
