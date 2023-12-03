@@ -23,7 +23,7 @@ RUN chown -R www-data:www-data /var/www/html
 ENV PASSWORD=password
 
 # Generate password, start PHP-FPM and Nginx services
-CMD ["sh", "-c", "printf 'nikos:$(openssl passwd -apr1 $PASSWORD)\n' > /opt/kiko-password && php-fpm -D && nginx -g 'daemon off;'"]
+CMD ["sh", "-c", "printf \"nikos:$(openssl passwd -apr1 $PASSWORD)\n\" > /opt/kiko-password && php-fpm -D && nginx -g 'daemon off;'"]
 
 # Expose ports 80 and 443 for Nginx
 EXPOSE 80
