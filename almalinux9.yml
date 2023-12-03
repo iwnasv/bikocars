@@ -4,7 +4,7 @@
   tasks:
     - name: Install required packages
       yum:
-        name: ['git', 'certbot', 'nano', 'bash-completion', 'epel-release', 'yum-utils', 'device-mapper-persistent-data', 'lvm2']
+        name: ['git', 'certbot', 'nano', 'bash-completion', 'epel-release', 'yum-utils', 'sqlite', 'lsof', 'firewalld' ]
         state: latest
 
     - name: Add Docker repo
@@ -46,4 +46,20 @@
         path: /etc/fstab
         line: '/swapfile swap swap defaults 0 0'
         state: present
+
+    - name: Start and enable firewalld service
+      systemd:
+        name: firewalld
+        state: started
+        enabled: yes
+
+    - name: Allow only specific services in firewalld
+      firewalld:
+        service: "{{ item }}"
+        permanent: yes
+        state: enabled
+      loop:
+        - ssh
+        - http
+        - https
 ...
