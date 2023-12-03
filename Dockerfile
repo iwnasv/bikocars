@@ -8,7 +8,7 @@ COPY . /var/www/html/
 # Email configuration; use a volume to overwrite
 COPY cfg/emailconf.php /var/www/html/src/emailconf.php
 
-RUN apk add --no-cache sqlite nginx
+RUN apk add --no-cache sqlite nginx openssl
 
 # Initialize kikocars.db using SQLite3
 RUN sqlite3 /var/www/html/db/kikocars.db < /var/www/html/db/kikocars.sql
@@ -23,7 +23,7 @@ RUN chown -R www-data:www-data /var/www/html
 ENV PASSWORD=password
 
 # Create the password file using the environment variable
-RUN echo "$PASSWORD" > /opt/kiko-password
+RUN printf "nikos:$(openssl passwd -apr1 $PASSWORD)\n" | > /opt/kiko-password
 
 # Start PHP-FPM and Nginx services
 CMD ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]
